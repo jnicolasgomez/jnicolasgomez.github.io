@@ -9,21 +9,46 @@
 
     <section class="flex h-130 rounded-b-[50px] bg-[#0F1735] overflow-hidden justify-center">
         <div class="flex h-full max-w-6xl relative">
-            <div class="m-17 w-full">
-                <h1 class="text-8xl font-extrabold mb-4 text-white">I'm <span class="text-[#E8F992] italic">Nicolás Gómez</span></h1>
-                <p class="text-3xl font-semibold text-white">A Backend Developer and Software Engineer</p>
-                <div class="text-white text-md max-w-xl">
-                    Hi, I'm Nicolas Gomez, a passionate and dedicated software engineer with 5 years of experience specializing in backend development.
+            <div class="mx-5 md:ml-17 mt-10 w-full relative">
+                <div>
+                    <h1 class="text-5xl md:text-8xl font-extrabold mb-4 text-white text-center md:text-left">I'm <span class="text-[#E8F992] italic">Nicolás Gómez</span></h1>
+                    <p class="text-2xl md:text-3xl font-semibold text-white text-center md:text-left">A Backend Developer and Software Engineer</p>
                 </div>
-                <div class="flex space-x-4  items-center">
+                
+                <div class="hidden md:block">
+                    
+                    <div class="text-white text-md max-w-xl">
+                        Hi, I'm Nicolas Gomez, a passionate and dedicated software engineer with 5 years of experience specializing in backend development.
+                    </div>
+                </div>
+                <div class="hidden
+                absolute
+                justify-between
+                w-full
+                mt-10
+                space-y-4
+                items-center
+                bottom-35
+                sm:flex
+                md:static
+                md:justify-normal
+                md:flex-row
+                md:space-x-4
+                md:space-y-0
+                ">
+                    <button @click="scrollToSection('projects')" class="cursor-pointer mt-8 px-6 py-2 border-2 text-black rounded-full bg-[#E8F992] hover:bg-[#9ca861] hover:text-[#0F1735] transition duration-300">
+                        View Projects
+                    </button>
                     <button @click="scrollToSection('contact')" class="cursor-pointer mt-8 px-6 py-2 border-2 border-white text-white rounded-full bg-transparent hover:bg-white hover:text-[#0F1735] transition duration-300">
                         Contact Me
                     </button>
-                    <button @click="scrollToSection('projects')" class="cursor-pointer mt-8 px-6 py-2 border-2 text-black rounded-full bg-[#E8F992] hover:bg-[#9ca861] hover:text-[#0F1735] transition duration-300">
-                        View my projects
-                    </button>
                 </div>
-                <div class="flex space-x-4 my-4">
+                <div class="absolute
+                bottom-30
+                hidden
+                lg:block
+                lg:bottom-10">
+                    <div class="flex space-x-4 my-4">
                     <img class="w-4 h-4" src="/assets/star.png" alt="">
                     <img class="w-4 h-4" src="/assets/star.png" alt="">
                     <img class="w-4 h-4" src="/assets/star.png" alt="">
@@ -36,15 +61,28 @@
                 <div class="text-white text-md">
                     Experience
                 </div>
+                </div>
             </div>
-            <div class="flex justify-center h-76 bottom-0 right-0 absolute min-w-100">
+            <div class="flex justify-center h-76 md:h-76 bottom-0 md:right-0 left-1/2 md:left-auto -translate-x-1/2 md:translate-x-0 absolute flex-none">
                 <!-- Background Blur Circle -->
-                <div class="absolute w-76 h-76 bottom-[-20%] bg-[#e8f99284] rounded-full blur-3xl"></div>
+                <div class="absolute
+                w-76
+                h-76
+                bottom-[-20%]
+                bg-[#e8f99284]
+                rounded-full
+                blur-3xl"></div>
 
                 <!-- Image (Appears Above the Div) -->
-                <img class="relative h-76 z-10 min-w-110" src="/picture.png" alt="">
+                <img class="relative
+                h-70
+                z-10
+                min-w-[403px]
+                sm:min-w-[427px]
+                sm:h-76
+                sm:bottom-0
+                bottom-[-10%]" src="/picture.png" alt="">
             </div>
-            
         </div>
     </section>
     <section id="about">
@@ -57,7 +95,7 @@
     </section>
     <section class="rounded-[50px] bg-[#0F1735]">
         <div class="mt-8 text-white p-14">
-            <h2 class="text-4xl font-bold mb-10"> Recent <span class="text-[#E8F992] italic">Experience</span></h2>
+            <h2 class="text-4xl font-bold mb-10"> My <span class="text-[#E8F992] italic">Experience</span></h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <div v-for="item in companies" class="bg-white/10 p-4 rounded-3xl border-1 text-white">
                     <img class="h-14 w-14 mb-4" :src="item.image" alt="">
