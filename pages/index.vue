@@ -10,7 +10,7 @@
     <section class="flex h-130 rounded-b-[50px] bg-[#0F1735] overflow-hidden justify-center">
         <div class="flex h-full max-w-6xl relative">
             <div class="m-17 w-full">
-                <h1 class="text-8xl font-extrabold mb-4 text-white">I'm <span class="text-[#E8F992]">Nicolás Gómez</span></h1>
+                <h1 class="text-8xl font-extrabold mb-4 text-white">I'm <span class="text-[#E8F992] italic">Nicolás Gómez</span></h1>
                 <p class="text-3xl font-semibold text-white">A Backend Developer and Software Engineer</p>
                 <div class="text-white text-md max-w-xl">
                     Hi, I'm Nicolas Gomez, a passionate and dedicated software engineer with 5 years of experience specializing in backend development.
@@ -49,7 +49,7 @@
     </section>
     <section id="about">
         <div class="mt-8 p-14">
-            <h2 class="text-4xl font-bold mb-2 text-white text-center">About <span class="text-[#E8F992]">Me</span></h2>
+            <h2 class="text-4xl font-bold mb-2 text-white text-center">About <span class="text-[#E8F992] italic">Me</span></h2>
             <p class="text-lg text-white text-center">
                 I'm a software engineer with five years of experience in building high-quality, impactful software solutions. Passionate about creating efficient and user-friendly products, I continuously explore new technologies and refine my skills to adapt to evolving challenges. My goal is to develop software that enhances everyday life, streamlines processes, and drives meaningful improvements.
             </p>
@@ -57,7 +57,7 @@
     </section>
     <section class="rounded-[50px] bg-[#0F1735]">
         <div class="mt-8 text-white p-14">
-            <h2 class="text-4xl font-bold mb-10">Experience</h2>
+            <h2 class="text-4xl font-bold mb-10"> Recent <span class="text-[#E8F992] italic">Experience</span></h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <div v-for="item in companies" class="bg-white/10 p-4 rounded-3xl border-1 text-white">
                     <img class="h-14 w-14 mb-4" :src="item.image" alt="">
@@ -69,7 +69,7 @@
     </section>
     <section id="skills">
         <div class="mt-8 text-white p-14">
-            <h2 class="text-4xl font-bold mb-10 text-center">Programming <span class="text-[#E8F992]">Languages</span></h2>
+            <h2 class="text-4xl font-bold mb-10 text-center">Programming <span class="text-[#E8F992] italic">Languages</span></h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <div v-for="item in languages" class="bg-white/10 p-4 rounded-3xl border-1 text-white flex">
                     <img class="h-20 w-20" src="/assets/js.png" alt="">
@@ -87,7 +87,7 @@
     </section>
     <section class="rounded-[50px] bg-[#0F1735]" id="projects" >
         <div class="mt-8 p-14">
-            <h2 class="text-4xl font-bold mb-10 text-white text-center">Projects</h2>
+            <h2 class="text-4xl font-bold mb-10 text-white "> Projects I've <span class="text-[#E8F992] italic">Worked On</span></h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <div class="bg-gray-100 p-4 rounded-lg">
                     <img src="" alt="Project 1" class="w-full h-48 object-cover rounded-t-lg">
