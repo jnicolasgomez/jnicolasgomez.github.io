@@ -1,17 +1,28 @@
 <template>
-    <nav class="p-4 bg-[#0F1735]">
+    <nav class="p-4 bg-[#0F1735] overflow-hidden">
+        <div class="absolute
+                w-56
+                h-56
+                top-[-15%]
+                left-[-10%]
+                bg-[#e8f99253]
+                rounded-full
+                blur-3xl
+                z-10"></div>
         <ul class="flex space-x-20 justify-center">
-            <li @click="scrollToSection('about')" class="text-lg font-semibold text-white hover:text-gray-300 cursor-pointer">About Me</li>
+            <li @click="scrollToSection('about')" class="text-lg font-semibold text-white hover:text-gray-300 cursor-pointer">About</li>
             <li @click="scrollToSection('skills')" class="text-lg font-semibold text-white hover:text-gray-300 cursor-pointer">Skills</li>
             <li @click="scrollToSection('projects')" class="text-lg font-semibold text-white hover:text-gray-300 cursor-pointer">Projects</li>
         </ul>
     </nav>
 
-    <section class="flex h-130 rounded-b-[50px] bg-[#0F1735] overflow-hidden justify-center">
-        <div class="flex h-full max-w-6xl relative">
-            <div class="mx-5 md:ml-17 mt-10 w-full relative">
+    <section class="flex h-130 rounded-b-[50px] bg-[#0F1735] overflow-hidden justify-center relative">
+        <img class="h-35 absolute left-0 bottom-30" src="/assets/Vector2.png" alt="">
+        <img class="h-10 absolute right-0 top-0" src="/assets/Vector3.png" alt="">
+        <div class="flex h-full w-full max-w-6xl relative">
+            <div class="mx-10 mt-10 w-full relative">
                 <div>
-                    <h1 class="text-5xl md:text-8xl font-extrabold mb-4 text-white text-center md:text-left">I'm <span class="text-[#E8F992] italic">Nicolás Gómez</span></h1>
+                    <h1 class="text-5xl sm:text-6xl md:text-8xl font-extrabold mb-4 text-white text-center md:text-left">I'm <span class="text-[#E8F992] italic">Nicolás Gómez</span></h1>
                     <p class="text-2xl md:text-3xl font-semibold text-white text-center md:text-left">A Backend Developer and Software Engineer</p>
                 </div>
                 
@@ -82,8 +93,10 @@
                 sm:h-76
                 sm:bottom-0
                 bottom-[-10%]" src="/picture.png" alt="">
+                
             </div>
         </div>
+        <img class="h-25 md:h-35 absolute right-0 bottom-60 md:bottom-30" src="/assets/Vector.png" alt="">
     </section>
     <section id="about">
         <div class="mt-8 p-14">
