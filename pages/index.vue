@@ -229,7 +229,7 @@ export default {
             },
             {
                 name: 'SQL',
-                image: '/assets/SQL.png',
+                image: '/assets/sql.png',
                 rating: 4
             },
             {
