@@ -209,12 +209,12 @@ export default {
             },
             {
                 name: 'Typescript',
-                image: '/assets/Typescript.png',
+                image: '/assets/TypeScript.png',
                 rating: 4
             },
             {
                 name: 'Vue',
-                image: '/assets/vue.png',
+                image: '/assets/Vue.png',
                 rating: 4
             },
             {
@@ -229,12 +229,12 @@ export default {
             },
             {
                 name: 'SQL',
-                image: '/assets/Sql.png',
+                image: '/assets/SQL.png',
                 rating: 4
             },
             {
                 name: 'AWS',
-                image: '/assets/Aws.png',
+                image: '/assets/AWS.png',
                 rating: 3
             },
             {
