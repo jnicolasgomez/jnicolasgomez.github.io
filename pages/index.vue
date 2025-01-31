@@ -177,16 +177,16 @@
             <div class="flex flex-row">
                 
             </div>
-            <div class="flex flex-row w-full justify-center space-x-6 my-5">
-                <p class="text-lg text-white rounded-full outline outline-white pl-1 pr-3 py-1 flex">
+            <div class="flex flex-col md:flex-row w-full justify-center items-center md:space-x-6 space-y-4 md:space-y-0 my-5">
+                <p class="text-lg text-white rounded-full outline outline-white pl-1 pr-3 py-1 flex items-center w-[200px]">
                     <img src="/assets/phone.png" alt="Phone" class="h-8 w-8 mr-1">
                     +57 3194396360
                 </p>
-                <p class="text-lg text-white rounded-full outline outline-white pl-1 pr-3 py-1 flex">
+                <p class="text-lg text-white rounded-full outline outline-white pl-1 pr-3 py-1 flex items-center w-[270px]">
                     <img src="/assets/mail.png" alt="Email" class="h-8 w-8 mr-1">
                     nicolas.gm243@gmail.com
                 </p>
-                <p class="text-lg text-white rounded-full outline outline-white pl-1 pr-3 py-1 flex">
+                <p class="text-lg text-white rounded-full outline outline-white pl-1 pr-3 py-1 flex items-center w-[200px]">
                     <img src="/assets/location.png" alt="Location" class="h-8 w-8 mr-1">
                     Bogotá, Colombia
                 </p>
