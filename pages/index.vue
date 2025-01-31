@@ -1,5 +1,5 @@
 <template>
-    <nav class="p-4 bg-[#0F1735] overflow-hidden">
+    <nav class="p-4 bg-[#0F1735] overflow-hidden z-10">
         <div class="absolute
                 w-56
                 h-56
@@ -8,7 +8,7 @@
                 bg-[#e8f99253]
                 rounded-full
                 blur-3xl
-                z-10"></div>
+                z-11"></div>
         <ul class="flex space-x-20 justify-center">
             <li @click="scrollToSection('about')" class="text-lg font-semibold text-white hover:text-gray-300 cursor-pointer">About</li>
             <li @click="scrollToSection('skills')" class="text-lg font-semibold text-white hover:text-gray-300 cursor-pointer">Skills</li>
@@ -16,7 +16,7 @@
         </ul>
     </nav>
 
-    <section class="flex h-130 rounded-b-[50px] bg-[#0F1735] overflow-hidden justify-center relative">
+    <section class="flex h-130 rounded-b-[50px] bg-[#0F1735] overflow-hidden justify-center relative z-10">
         <img class="h-35 absolute left-0 bottom-30" src="/assets/Vector2.png" alt="">
         <img class="h-10 absolute right-0 top-0" src="/assets/Vector3.png" alt="">
         <div class="flex h-full w-full max-w-6xl relative">
@@ -98,15 +98,26 @@
         </div>
         <img class="h-25 md:h-35 absolute right-0 bottom-60 md:bottom-30" src="/assets/Vector.png" alt="">
     </section>
-    <section id="about">
-        <div class="mt-8 p-14">
+    <section id="about" class="relative z-0">
+        <div class="absolute
+                w-76
+                h-76
+                top-[-10%]
+                left-[-12%]
+                bg-[#e8f99243]
+                rounded-full
+                blur-3xl
+                z-2">
+        </div>
+        <img class="h-20 absolute right-0 top-0" src="/assets/Vector4.png" alt="">
+        <div class="mt-8 p-14 z-4">
             <h2 class="text-4xl font-bold mb-2 text-white text-center">About <span class="text-[#E8F992] italic">Me</span></h2>
             <p class="text-lg text-white text-center">
                 I'm a software engineer with five years of experience in building high-quality, impactful software solutions. Passionate about creating efficient and user-friendly products, I continuously explore new technologies and refine my skills to adapt to evolving challenges. My goal is to develop software that enhances everyday life, streamlines processes, and drives meaningful improvements.
             </p>
         </div>
     </section>
-    <section class="rounded-[50px] bg-[#0F1735]">
+    <section class="rounded-[50px] bg-[#0F1735] z-10">
         <div class="mt-8 text-white p-14">
             <h2 class="text-4xl font-bold mb-10"> My <span class="text-[#E8F992] italic">Experience</span></h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -121,16 +132,17 @@
     <section id="skills">
         <div class="mt-8 text-white p-14">
             <h2 class="text-4xl font-bold mb-10 text-center">Programming <span class="text-[#E8F992] italic">Languages</span></h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div v-for="item in languages" class="bg-white/10 p-4 rounded-3xl border-1 text-white flex">
-                    <img class="h-20 w-20" src="/assets/js.png" alt="">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 w-full">
+                <div v-for="item in languages" class="bg-white/10 p-4 rounded-3xl border-1 text-white flex min-w-[350px] h-35">
+                    <img class="h-20 w-20 mr-4" :src="item.image" alt="">
                     <div>
-                        <div class="flex">
-                        <h3 class="text-2xl font-semibold">{{item.name}}</h3>
-                        <img class="w-4 h-4" v-for="i in item.rating" src="/assets/star.png" alt="">
-                        <img class="w-4 h-4" v-for="i in (5 - item.rating)" index="i" src="/assets/star-border.png" alt="">
-                    </div>
-                    <p class="text-lg text-white">{{ item.description }}</p>
+                        <div class="flex items-center">
+                            <h3 class="text-2xl font-semibold mr-3">{{item.name}}</h3>
+                            <img class="w-4 h-4 mr-1" v-for="i in item.rating" src="/assets/star.png" alt="">
+                            <img class="w-4 h-4 mr-1" v-for="i in (5 - item.rating)" index="i" src="/assets/star-border.png" alt="">
+                            ({{ item.rating }}/5)
+                        </div>
+                        <p class="text-lg text-white">{{ item.description }}</p>
                     </div>
                 </div>
             </div>
@@ -190,10 +202,25 @@ export default {
     data: () => ({
         languages: [
             {
-                name: 'JavaScript',
+                name: 'NodeJs',
                 image: '/assets/js.png',
                 description: 'bla bla',
                 rating: 5
+            },
+            {
+                name: 'Typescript',
+                image: '/assets/Typescript.png',
+                rating: 4
+            },
+            {
+                name: 'Vue',
+                image: '/assets/vue.png',
+                rating: 4
+            },
+            {
+                name: 'Clojure',
+                image: '/assets/Clojure.png',
+                rating: 3
             },
             {
                 name: 'Python',
@@ -201,10 +228,31 @@ export default {
                 rating: 3
             },
             {
-                name: 'Java',
-                image: '/assets/java.png',
+                name: 'SQL',
+                image: '/assets/Sql.png',
+                rating: 4
+            },
+            {
+                name: 'AWS',
+                image: '/assets/Aws.png',
                 rating: 3
-            }],
+            },
+            {
+                name: 'Docker',
+                image: '/assets/Docker.png',
+                rating: 3
+            },
+            {
+                name: 'Kubernetes',
+                image: '/assets/Kubernetes.png',
+                rating: 3
+            },
+            {
+                name: 'Git',
+                image: '/assets/Git.png',
+                rating: 5
+            }
+        ],
         companies: [
             {
                 name: 'Nubank',
