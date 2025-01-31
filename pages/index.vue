@@ -133,11 +133,12 @@
         <div class="mt-8 text-white p-14">
             <h2 class="text-4xl font-bold mb-10 text-center">Programming <span class="text-[#E8F992] italic">Languages</span></h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 w-full">
-                <div v-for="item in languages" class="bg-white/10 p-4 rounded-3xl border-1 text-white flex min-w-[350px] h-35">
+                <div v-for="item in languages" class="bg-white/10 p-4 rounded-3xl border-1 text-white flex min-w-[300px] h-35">
                     <img class="h-20 w-20 mr-4" :src="item.image" alt="">
                     <div>
+                        <h3 class="text-2xl font-semibold mr-3">{{item.name}}</h3>
                         <div class="flex items-center">
-                            <h3 class="text-2xl font-semibold mr-3">{{item.name}}</h3>
+                            
                             <img class="w-4 h-4 mr-1" v-for="i in item.rating" src="/assets/star.png" alt="">
                             <img class="w-4 h-4 mr-1" v-for="i in (5 - item.rating)" index="i" src="/assets/star-border.png" alt="">
                             ({{ item.rating }}/5)
@@ -170,27 +171,36 @@
             </div>
         </div>
     </section>
-    <section id="contact" class="rounded-[50px] bg-[#0F1735]">
+    <section id="contact" class="rounded-[50px] bg-[#0F1735] p-14 mt-8">
         <div class="mt-8">
             <h2 class="text-4xl font-bold mb-2 text-white text-center">Nicolás <span class="text-[#E8F992]">Gómez</span></h2>
-            <p class="text-lg text-white">Phone: (123) 456-7890</p>
-            <p class="text-lg text-white">Email: nicolasgomez@example.com</p>
-            <p class="text-lg text-white">Location: City, Country</p>
-            <div class="flex space-x-4 mt-4">
-                <a href="https://twitter.com/yourprofile" target="_blank" class="text-white hover:text-gray-900">
-                    <i class="fab fa-twitter text-2xl">
-                        nsdajdnajs
-                    </i>
+            <div class="flex flex-row">
+                
+            </div>
+            <div class="flex flex-row w-full justify-center space-x-6 my-5">
+                <p class="text-lg text-white rounded-full outline outline-white pl-1 pr-3 py-1 flex">
+                    <img src="/assets/phone.png" alt="Phone" class="h-8 w-8 mr-1">
+                    +57 3194396360
+                </p>
+                <p class="text-lg text-white rounded-full outline outline-white pl-1 pr-3 py-1 flex">
+                    <img src="/assets/mail.png" alt="Email" class="h-8 w-8 mr-1">
+                    nicolas.gm243@gmail.com
+                </p>
+                <p class="text-lg text-white rounded-full outline outline-white pl-1 pr-3 py-1 flex">
+                    <img src="/assets/location.png" alt="Location" class="h-8 w-8 mr-1">
+                    Bogotá, Colombia
+                </p>
+            </div>
+            
+            <div class="flex flex-row justify-center w-full space-x-4 my-5">
+                <a href="https://linkedin.com/in/nicolas-g" target="_blank" class="bg-white rounded-full p-2 hover:text-gray-900 h-10 w-10">
+                    <img src="/assets/linkedin.png" alt="LinkedIn" class="h-6 w-6">
                 </a>
-                <a href="https://linkedin.com/in/yourprofile" target="_blank" class="text-white hover:text-gray-900">
-                    <i class="fab fa-linkedin text-2xl">
-                        Linkedin
-                    </i>
+                <a href="https://github.com/jnicolasgomez" target="_blank" class="bg-white rounded-full p-2 hover:text-gray-900 h-10 w-10">
+                    <img src="/assets/github.png" alt="GitHub" class="h-6 w-6">
                 </a>
-                <a href="https://github.com/yourprofile" target="_blank" class="text-white hover:text-gray-900">
-                    <i class="fab fa-github text-2xl">
-                        GitHub
-                    </i>
+                <a href="https://instagram.com/jnicolas_g_" target="_blank" class="bg-white rounded-full p-2 hover:text-gray-900 h-10 w-10">
+                    <img src="/assets/instagram.png" alt="Instagram" class="h-6 w-6">
                 </a>
             </div>
         </div>
