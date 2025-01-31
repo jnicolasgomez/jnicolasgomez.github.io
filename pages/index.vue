@@ -9,7 +9,7 @@
                 rounded-full
                 blur-3xl
                 z-11"></div>
-        <ul class="flex space-x-20 justify-center">
+        <ul class="flex space-x-20 justify-center w-full">
             <li @click="scrollToSection('about')" class="text-lg font-semibold text-white hover:text-gray-300 cursor-pointer">About</li>
             <li @click="scrollToSection('skills')" class="text-lg font-semibold text-white hover:text-gray-300 cursor-pointer">Skills</li>
             <li @click="scrollToSection('projects')" class="text-lg font-semibold text-white hover:text-gray-300 cursor-pointer">Projects</li>

@@ -1,4 +1,5 @@
 export default {
+  important: true,
   content: [
     './app.vue',
     './components/**/*.{vue,js}',
