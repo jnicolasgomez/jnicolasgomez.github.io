@@ -9,10 +9,10 @@
                 rounded-full
                 blur-3xl
                 z-11"></div>
-        <ul class="flex space-x-20 justify-center w-full">
-            <li @click="scrollToSection('about')" class="text-lg font-semibold text-white hover:text-gray-300 cursor-pointer">About</li>
-            <li @click="scrollToSection('skills')" class="text-lg font-semibold text-white hover:text-gray-300 cursor-pointer">Skills</li>
-            <li @click="scrollToSection('projects')" class="text-lg font-semibold text-white hover:text-gray-300 cursor-pointer">Projects</li>
+        <ul class="flex justify-center w-full">
+            <li @click="scrollToSection('about')" class="text-lg font-semibold text-white hover:text-gray-300 cursor-pointer mx-5">About</li>
+            <li @click="scrollToSection('skills')" class="text-lg font-semibold text-white hover:text-gray-300 cursor-pointer mx-5">Skills</li>
+            <li @click="scrollToSection('projects')" class="text-lg font-semibold text-white hover:text-gray-300 cursor-pointer mx-5">Projects</li>
         </ul>
     </nav>
 
@@ -117,9 +117,18 @@
             </p>
         </div>
     </section>
-    <section class="rounded-[50px] bg-[#0F1735] z-10">
+    <section class="rounded-[50px] bg-[#0F1735] z-10 relative">
         <div class="mt-8 text-white p-14">
             <h2 class="text-4xl font-bold mb-10"> My <span class="text-[#E8F992] italic">Experience</span></h2>
+            <div class="absolute
+                w-76
+                h-76
+                left-[-20%]
+                bottom-15
+                bg-[#e8f99243]
+                rounded-full
+                blur-3xl
+                z-2"></div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <div v-for="item in companies" class="bg-white/10 p-4 rounded-3xl border-1 text-white">
                     <img class="h-14 w-14 mb-4" :src="item.image" alt="">
@@ -127,11 +136,20 @@
                     <p class="text-md text-white mb-4">{{ item.from }} - {{ item.to }}</p>
                 </div>
             </div>
+            <img class="h-20 absolute right-0 bottom-25" src="/assets/Vector5.png" alt="">
         </div>
     </section>
-    <section id="skills">
+    <section id="skills" class="relative z-0">
         <div class="mt-8 text-white p-14">
             <h2 class="text-4xl font-bold mb-10 text-center">Programming <span class="text-[#E8F992] italic">Languages</span></h2>
+            <div class="absolute
+                w-96
+                h-96
+                left-[-25%]
+                bg-[#e8f9926a]
+                rounded-full
+                blur-3xl
+                z-2"></div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 w-full">
                 <div v-for="item in languages" class="bg-white/10 p-4 rounded-3xl border-1 text-white flex min-w-[300px] h-35">
                     <img class="h-20 w-20 mr-4" :src="item.image" alt="">
@@ -147,28 +165,43 @@
                     </div>
                 </div>
             </div>
+            <div class="absolute
+                w-96
+                h-96
+                right-[-30%]
+                bottom-[-15%]
+                bg-[#e8f9926a]
+                rounded-full
+                blur-3xl
+                z-2"></div>
         </div>
     </section>
-    <section class="rounded-[50px] bg-[#0F1735]" id="projects" >
+    <section class="rounded-[50px] bg-[#0F1735] relative z-10 overflow-hidden" id="projects" >
         <div class="mt-8 p-14">
             <h2 class="text-4xl font-bold mb-10 text-white "> Projects I've <span class="text-[#E8F992] italic">Worked On</span></h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div class="bg-gray-100 p-4 rounded-lg">
-                    <img src="" alt="Project 1" class="w-full h-48 object-cover rounded-t-lg">
-                    <h3 class="text-2xl font-semibold mt-2">Project 1</h3>
-                    <p class="text-lg text-white">Description of project 1.</p>
-                </div>
-                <div class="bg-gray-100 p-4 rounded-lg">
-                    <img src="" alt="Project 2" class="w-full h-48 object-cover rounded-t-lg">
-                    <h3 class="text-2xl font-semibold mt-2">Project 2</h3>
-                    <p class="text-lg text-white">Description of project 2.</p>
-                </div>
-                <div class="bg-gray-100 p-4 rounded-lg">
-                    <img src="" alt="Project 3" class="w-full h-48 object-cover rounded-t-lg">
-                    <h3 class="text-2xl font-semibold mt-2">Project 3</h3>
-                    <p class="text-lg text-white">Description of project 3.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div v-for="item in projects" class="bg-[#ffffffcc] rounded-lg z-11 project-card">
+                    <img :src="item.image" alt="Project 1" class="w-full h-48 object-cover object-top rounded-t-lg cursor-pointer" @click="goToProject(item.url)">
+                    <div class="px-4 py-2">
+                        <h3 class="text-xl font-semibold">{{ item.name }}</h3>
+                        <p class="text-sm">{{ item.description }}</p>
+                        <div class="flex flex-wrap">
+                            <span v-for="tech in item.technologies" class="text-xs bg-gray-200 px-2 py-1 rounded-full mr-2 mt-1">{{ tech }}</span>
+                        </div>
+                        <a v-if="item.github" :href="item.github" target="_blank" class="text-xs bg-[#E8F992] px-2 py-1 rounded-full mr-2 mt-1 font-bold"><\></a>
+                    </div>
                 </div>
             </div>
+            <div class="absolute
+                w-96
+                h-96
+                left-[-25%]
+                bottom-[-20%]
+                bg-[#e8f9926a]
+                rounded-full
+                blur-3xl
+                z-2"></div>
         </div>
     </section>
     <section id="contact" class="rounded-[50px] bg-[#0F1735] p-14 mt-8">
@@ -178,28 +211,28 @@
                 
             </div>
             <div class="flex flex-col md:flex-row w-full justify-center items-center md:space-x-6 space-y-4 md:space-y-0 my-5">
-                <p class="text-lg text-white rounded-full outline outline-white pl-1 pr-3 py-1 flex items-center w-[200px]">
+                <p class="text-lg text-white rounded-full outline outline-white pl-1 pr-3 py-1 flex items-center w-[200px] mx-5">
                     <img src="/assets/phone.png" alt="Phone" class="h-8 w-8 mr-1">
                     +57 3194396360
                 </p>
-                <p class="text-lg text-white rounded-full outline outline-white pl-1 pr-3 py-1 flex items-center w-[270px]">
+                <p class="text-lg text-white rounded-full outline outline-white pl-1 pr-3 py-1 flex items-center w-[270px] mx-5">
                     <img src="/assets/mail.png" alt="Email" class="h-8 w-8 mr-1">
                     nicolas.gm243@gmail.com
                 </p>
-                <p class="text-lg text-white rounded-full outline outline-white pl-1 pr-3 py-1 flex items-center w-[200px]">
+                <p class="text-lg text-white rounded-full outline outline-white pl-1 pr-3 py-1 flex items-center w-[200px] mx-5">
                     <img src="/assets/location.png" alt="Location" class="h-8 w-8 mr-1">
                     Bogotá, Colombia
                 </p>
             </div>
             
             <div class="flex flex-row justify-center w-full space-x-4 my-5">
-                <a href="https://linkedin.com/in/nicolas-g" target="_blank" class="bg-white rounded-full p-2 hover:text-gray-900 h-10 w-10">
+                <a href="https://linkedin.com/in/nicolas-g" target="_blank" class="bg-white rounded-full p-2 hover:text-gray-900 h-10 w-10 mx-5">
                     <img src="/assets/linkedin.png" alt="LinkedIn" class="h-6 w-6">
                 </a>
-                <a href="https://github.com/jnicolasgomez" target="_blank" class="bg-white rounded-full p-2 hover:text-gray-900 h-10 w-10">
+                <a href="https://github.com/jnicolasgomez" target="_blank" class="bg-white rounded-full p-2 hover:text-gray-900 h-10 w-10 mx-5">
                     <img src="/assets/github.png" alt="GitHub" class="h-6 w-6">
                 </a>
-                <a href="https://instagram.com/jnicolas_g_" target="_blank" class="bg-white rounded-full p-2 hover:text-gray-900 h-10 w-10">
+                <a href="https://instagram.com/jnicolas_g_" target="_blank" class="bg-white rounded-full p-2 hover:text-gray-900 h-10 w-10 mx-5">
                     <img src="/assets/instagram.png" alt="Instagram" class="h-6 w-6">
                 </a>
             </div>
@@ -214,7 +247,7 @@ export default {
             {
                 name: 'NodeJs',
                 image: '/assets/js.png',
-                description: 'bla bla',
+                description: '',
                 rating: 5
             },
             {
@@ -292,13 +325,56 @@ export default {
                 role: 'Software Intern',
                 image: '/assets/ibm_logo.png'
             },
+        ],
+        projects: [
+            {
+                name: 'Fullstack Songs and Chords App',
+                image: '/assets/project-api.png',
+                description: 'An app that allows you to store and edit your favorite songs and chords.',
+                technologies: ['Node.js', 'Express', 'Firebase Auth','Firestore', 'MongoDB',  'Vue.js', 'Jest', 'Google Cloud'],
+                url: 'https://proyectovertigo.com/chords',
+                github: 'https://github.com/jnicolasgomez/songs-chords-api'
+            },
+            {
+                name: 'Vertigo Band Website',
+                image: '/assets/project-vertigo.png',
+                description: 'A website for a band that also allows you to store your favorite songs and chords.',
+                technologies: ['Vue.js', 'Firebase Auth', 'Jest'],
+                url: 'https://proyectovertigo.com'
+            },
+            {
+                name: 'Random Chords App',
+                image: '/assets/project-random.jpg',
+                description: 'A simple app that generates random chords and plays them with a metronome.',
+                technologies: ['Vue.js', 'Quasar', 'Vite', 'Vue Router', 'Pinia'],
+                url: 'https://randomchords.vercel.app/'
+            },
+            {
+                name: 'Portfolio',
+                image: '/assets/project-portfolio.png',
+                description: 'My software engineer portfolio.',
+                technologies: ['Vue.js', 'Nuxt.js', 'Tailwind CSS', 'Vite', 'Vue Router', 'Pinia', 'Vercel'],
+                url: 'https://jnicolasgomez.vercel.app/'
+            },
         ]
     }),
     methods: {
         scrollToSection(section) {
             const el = document.getElementById(section);
             el.scrollIntoView({ behavior: 'smooth' });
+        },
+        goToProject(url) {
+            window.open(url, '_blank');
         }
     }
 }
 </script>
+
+<style scoped>
+    .project-card {
+        transition: transform 0.3s ease;
+    }
+    .project-card:hover {
+        transform: scale(1.05);
+    }
+</style>
