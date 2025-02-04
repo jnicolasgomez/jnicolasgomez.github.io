@@ -165,15 +165,6 @@
                     </div>
                 </div>
             </div>
-            <div class="absolute
-                w-96
-                h-96
-                right-[-30%]
-                bottom-[-15%]
-                bg-[#e8f9926a]
-                rounded-full
-                blur-3xl
-                z-2"></div>
         </div>
     </section>
     <section class="rounded-[50px] bg-[#0F1735] relative z-10 overflow-hidden" id="projects" >
