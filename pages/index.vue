@@ -130,7 +130,7 @@
                 blur-3xl
                 z-2"></div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div v-for="item in companies" class="bg-white/10 p-4 rounded-3xl border-1 text-white">
+                <div v-for="item in companies" class="bg-white/10 p-4 rounded-3xl border-1 text-white min-w-[250px]">
                     <img class="h-14 w-14 mb-4" :src="item.image" alt="">
                     <h3 class="text-2xl mb-4">{{ item.role }}</h3>
                     <p class="text-md text-white mb-4">{{ item.from }} - {{ item.to }}</p>
@@ -140,28 +140,41 @@
         </div>
     </section>
     <section id="skills" class="relative z-0">
-        <div class="mt-8 text-white p-14">
-            <h2 class="text-4xl font-bold mb-10 text-center">Programming <span class="text-[#E8F992] italic">Languages</span></h2>
-            <div class="absolute
+        <div class="absolute
                 w-96
                 h-96
-                left-[-25%]
+                left-[-35%]
+                bottom-[-20%]
                 bg-[#e8f9926a]
                 rounded-full
                 blur-3xl
                 z-2"></div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 w-full">
-                <div v-for="item in languages" class="bg-white/10 p-4 rounded-3xl border-1 text-white flex min-w-[300px] h-35">
-                    <img class="h-20 w-20 mr-4" :src="item.image" alt="">
-                    <div>
-                        <h3 class="text-2xl font-semibold mr-3">{{item.name}}</h3>
-                        <div class="flex items-center">
-                            
-                            <img class="w-4 h-4 mr-1" v-for="i in item.rating" src="/assets/star.png" alt="">
-                            <img class="w-4 h-4 mr-1" v-for="i in (5 - item.rating)" index="i" src="/assets/star-border.png" alt="">
-                            ({{ item.rating }}/5)
+        <div class="mt-8 text-white py-14">
+            <h2 class="text-4xl font-bold mb-10 text-center">Programming <span class="text-[#E8F992] italic">Languages & Technologies</span></h2>
+                
+            <div class="md:overflow-hidden overflow-x-auto px-14 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] z-5 pr-14">
+                <div class="grid
+                grid-rows-[repeat(3,minmax(0,1fr))]
+                auto-cols-[minmax(300px,1fr)]
+                grid-flow-col
+                md:grid-flow-row
+                md:grid-cols-2
+                md:grid-rows-auto
+                lg:auto-cols-auto
+                lg:grid-cols-3
+                gap-4
+                pb-4">
+                    <div v-for="item in languages" class="bg-white/10 p-4 rounded-3xl border-1 text-white flex min-w-[250px] max-w-[400px] h-[130px]">
+                        <img class="h-20 w-20 mr-4" :src="item.image" alt="">
+                        <div>
+                            <h3 class="text-2xl font-semibold mr-3">{{item.name}}</h3>
+                            <div class="flex items-center">
+                                <img class="w-4 h-4 mr-1" v-for="i in item.rating" src="/assets/star.png" alt="">
+                                <img class="w-4 h-4 mr-1" v-for="i in (5 - item.rating)" index="i" src="/assets/star-border.png" alt="">
+                                ({{ item.rating }}/5)
+                            </div>
+                            <p class="text-lg text-white">{{ item.description }}</p>
                         </div>
-                        <p class="text-lg text-white">{{ item.description }}</p>
                     </div>
                 </div>
             </div>
@@ -172,7 +185,7 @@
             <h2 class="text-4xl font-bold mb-10 text-white "> Projects I've <span class="text-[#E8F992] italic">Worked On</span></h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <div v-for="item in projects" class="bg-[#ffffffcc] rounded-lg z-11 project-card">
+                <div v-for="item in projects" class="bg-[#ffffffcc] rounded-lg z-11 project-card min-w-[250px]">
                     <img :src="item.image" alt="Project 1" class="w-full h-48 object-cover object-top rounded-t-lg cursor-pointer" @click="goToProject(item.url)">
                     <div class="px-4 py-2">
                         <h3 class="text-xl font-semibold">{{ item.name }}</h3>
@@ -202,28 +215,28 @@
                 
             </div>
             <div class="flex flex-col md:flex-row w-full justify-center items-center md:space-x-6 space-y-4 md:space-y-0 my-5">
-                <p class="text-lg text-white rounded-full outline outline-white pl-1 pr-3 py-1 flex items-center w-[200px] mx-5">
+                <p class="text-lg text-white rounded-full outline outline-white pl-1 pr-3 py-1 flex items-center w-[200px] mx-5 my-3">
                     <img src="/assets/phone.png" alt="Phone" class="h-8 w-8 mr-1">
                     +57 3194396360
                 </p>
-                <p class="text-lg text-white rounded-full outline outline-white pl-1 pr-3 py-1 flex items-center w-[270px] mx-5">
+                <p class="text-lg text-white rounded-full outline outline-white pl-1 pr-3 py-1 flex items-center w-[270px] mx-5 my-3">
                     <img src="/assets/mail.png" alt="Email" class="h-8 w-8 mr-1">
                     nicolas.gm243@gmail.com
                 </p>
-                <p class="text-lg text-white rounded-full outline outline-white pl-1 pr-3 py-1 flex items-center w-[200px] mx-5">
+                <p class="text-lg text-white rounded-full outline outline-white pl-1 pr-3 py-1 flex items-center w-[200px] mx-5 my-3">
                     <img src="/assets/location.png" alt="Location" class="h-8 w-8 mr-1">
                     Bogotá, Colombia
                 </p>
             </div>
             
             <div class="flex flex-row justify-center w-full space-x-4 my-5">
-                <a href="https://linkedin.com/in/nicolas-g" target="_blank" class="bg-white rounded-full p-2 hover:text-gray-900 h-10 w-10 mx-5">
+                <a href="https://linkedin.com/in/nicolas-g" target="_blank" class="bg-white rounded-full p-2 hover:text-gray-900 h-10 w-10 mx-5 min-w-10">
                     <img src="/assets/linkedin.png" alt="LinkedIn" class="h-6 w-6">
                 </a>
-                <a href="https://github.com/jnicolasgomez" target="_blank" class="bg-white rounded-full p-2 hover:text-gray-900 h-10 w-10 mx-5">
+                <a href="https://github.com/jnicolasgomez" target="_blank" class="bg-white rounded-full p-2 hover:text-gray-900 h-10 w-10 mx-5 min-w-10">
                     <img src="/assets/github.png" alt="GitHub" class="h-6 w-6">
                 </a>
-                <a href="https://instagram.com/jnicolas_g_" target="_blank" class="bg-white rounded-full p-2 hover:text-gray-900 h-10 w-10 mx-5">
+                <a href="https://instagram.com/jnicolas_g_" target="_blank" class="bg-white rounded-full p-2 hover:text-gray-900 h-10 w-10 mx-5 min-w-10">
                     <img src="/assets/instagram.png" alt="Instagram" class="h-6 w-6">
                 </a>
             </div>
