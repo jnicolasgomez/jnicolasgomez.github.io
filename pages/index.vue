@@ -47,7 +47,7 @@
                 md:space-x-4
                 md:space-y-0
                 ">
-                    <button @click="scrollToSection('projects')" class="cursor-pointer mt-8 px-6 py-2 border-2 text-black rounded-full bg-[#E8F992] hover:bg-[#9ca861] hover:text-[#0F1735] transition duration-300">
+                    <button @click="scrollToSection('projects')" class="cursor-pointer mt-8 px-6 py-2 border-2 text-black rounded-full bg-[#E8F992] hover:bg-[#9ca861] hover:text-[#0F1735] transition duration-300 mr-5">
                         View Projects
                     </button>
                     <button @click="scrollToSection('contact')" class="cursor-pointer mt-8 px-6 py-2 border-2 border-white text-white rounded-full bg-transparent hover:bg-white hover:text-[#0F1735] transition duration-300">
