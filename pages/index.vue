@@ -208,12 +208,10 @@
                 z-2"></div>
         </div>
     </section>
-    <section id="contact" class="rounded-[50px] bg-[#0F1735] p-14 mt-8">
+    <section id="contact" class="rounded-[50px] bg-[#0F1735] p-14 mt-8 relative">
         <div class="mt-8">
             <h2 class="text-4xl font-bold mb-2 text-white text-center">Nicolás <span class="text-[#E8F992]">Gómez</span></h2>
-            <div class="flex flex-row">
-                
-            </div>
+            <img class="h-25 absolute left-0 bottom-30" src="/assets/Vector6.png" alt="">
             <div class="flex flex-col md:flex-row w-full justify-center items-center md:space-x-6 space-y-4 md:space-y-0 my-5">
                 <p class="text-lg text-white rounded-full outline outline-white pl-1 pr-3 py-1 flex items-center w-[200px] mx-5 my-3">
                     <img src="/assets/phone.png" alt="Phone" class="h-8 w-8 mr-1">
@@ -241,6 +239,7 @@
                 </a>
             </div>
         </div>
+        <img class="h-25 md:h-35 absolute right-0 bottom-10" src="/assets/Vector.png" alt="">
     </section>
 </template>
 
