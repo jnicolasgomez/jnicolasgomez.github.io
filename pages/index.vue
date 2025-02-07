@@ -213,10 +213,6 @@
             <h2 class="text-4xl font-bold mb-2 text-white text-center">Nicolás <span class="text-[#E8F992]">Gómez</span></h2>
             <img class="h-25 absolute left-0 bottom-30" src="/assets/Vector6.png" alt="">
             <div class="flex flex-col md:flex-row w-full justify-center items-center md:space-x-6 space-y-4 md:space-y-0 my-5">
-                <p class="text-lg text-white rounded-full outline outline-white pl-1 pr-3 py-1 flex items-center w-[200px] mx-5 my-3">
-                    <img src="/assets/phone.png" alt="Phone" class="h-8 w-8 mr-1">
-                    +57 3194396360
-                </p>
                 <p class="text-lg text-white rounded-full outline outline-white pl-1 pr-3 py-1 flex items-center w-[270px] mx-5 my-3">
                     <img src="/assets/mail.png" alt="Email" class="h-8 w-8 mr-1">
                     nicolas.gm243@gmail.com
